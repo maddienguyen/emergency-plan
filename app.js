@@ -28,7 +28,6 @@ class BloxAudioEngine {
     const gain = this.ctx.createGain();
 
     osc.type = 'sawtooth';
-    // Frequency drops from 400Hz to 120Hz quickly
     osc.frequency.setValueAtTime(420, now);
     osc.frequency.exponentialRampToValueAtTime(110, now + 0.22);
 
@@ -47,7 +46,6 @@ class BloxAudioEngine {
     this.init();
     const now = this.ctx.currentTime;
 
-    // Fast series of bubble pops
     for (let i = 0; i < 5; i++) {
       const popOsc = this.ctx.createOscillator();
       const popGain = this.ctx.createGain();
@@ -65,27 +63,6 @@ class BloxAudioEngine {
       popOsc.start(popTime);
       popOsc.stop(popTime + 0.04);
     }
-  }
-
-  // Chezburger Crunchy Bite Tone
-  playCheez() {
-    this.init();
-    const now = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(260, now);
-    osc.frequency.exponentialRampToValueAtTime(520, now + 0.08);
-    osc.frequency.exponentialRampToValueAtTime(300, now + 0.16);
-
-    gain.gain.setValueAtTime(0.25, now);
-    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.18);
-
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start(now);
-    osc.stop(now + 0.18);
   }
 
   // Victory 8-Bit Triumphant Fanfare
@@ -196,17 +173,17 @@ function initSnowCanvas() {
     height = canvas.height = window.innerHeight;
   });
 
-  const flakes = Array.from({ length: 65 }, () => ({
+  const flakes = Array.from({ length: 55 }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    radius: Math.random() * 2.5 + 1,
-    speed: Math.random() * 1.2 + 0.6,
-    drift: Math.random() * 0.8 - 0.4
+    radius: Math.random() * 2.2 + 1,
+    speed: Math.random() * 1.1 + 0.5,
+    drift: Math.random() * 0.6 - 0.3
   }));
 
   function render() {
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
     ctx.beginPath();
     for (const f of flakes) {
       ctx.moveTo(f.x, f.y);
@@ -239,9 +216,9 @@ class SleighRushGame {
     this.rightBtn = document.getElementById('sleigh-right-btn');
 
     this.sleighX = 180;
-    this.sleighY = 210;
+    this.sleighY = 195;
     this.sleighWidth = 36;
-    this.sleighHeight = 24;
+    this.sleighHeight = 22;
     this.obstacles = [];
     this.score = 0;
     this.running = false;
@@ -321,7 +298,7 @@ class SleighRushGame {
     if (!this.running) return;
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // Draw Sleigh Track lines
+    // Track lines
     this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
     this.ctx.lineWidth = 2;
     this.ctx.beginPath();
@@ -337,12 +314,10 @@ class SleighRushGame {
       const obs = this.obstacles[i];
       obs.y += this.speed;
 
-      // Draw Obstacle
       if (obs.type === 'rock') {
         this.ctx.fillStyle = '#6c757d';
         this.ctx.fillRect(obs.x, obs.y, obs.size, obs.size);
       } else {
-        // Pine Tree
         this.ctx.fillStyle = '#2b8a3e';
         this.ctx.beginPath();
         this.ctx.moveTo(obs.x + obs.size / 2, obs.y);
@@ -351,7 +326,6 @@ class SleighRushGame {
         this.ctx.fill();
       }
 
-      // Collision Check
       if (
         this.sleighX < obs.x + obs.size &&
         this.sleighX + this.sleighWidth > obs.x &&
@@ -370,13 +344,11 @@ class SleighRushGame {
       }
     }
 
-    // Draw Sleigh (Roblox Style Red Block Sleigh with Runners)
+    // Sleigh
     this.ctx.fillStyle = '#e2231a';
     this.ctx.fillRect(this.sleighX, this.sleighY, this.sleighWidth, this.sleighHeight);
-    // Gold Trim
     this.ctx.fillStyle = '#ffd000';
     this.ctx.fillRect(this.sleighX, this.sleighY + this.sleighHeight - 4, this.sleighWidth, 4);
-    // Skis
     this.ctx.strokeStyle = '#adb5bd';
     this.ctx.lineWidth = 3;
     this.ctx.beginPath();
@@ -388,17 +360,13 @@ class SleighRushGame {
   }
 }
 
-// --- 4. SLEIGH CRASH PENALTY ROULETTE ---
+// --- 4. SLEIGH CRASH PENALTY ROULETTE (Streamlined) ---
 function initCrashRoulette() {
   const penalties = [
-    { text: "🍟 Feed your co-pilot a fry or tater tot!", icon: "🍟" },
+    { text: "🍟 Feed your partner a fry or tot!", icon: "🍟" },
     { text: "💆 Give a 15-second gentle shoulder massage!", icon: "💆" },
-    { text: "🥤 Take a big refreshing swig of Bloxy Cola!", icon: "🥤" },
-    { text: "💖 Say 3 genuine things you adore about your partner!", icon: "💖" },
-    { text: "🕺 Stand up and do the Roblox default dance together!", icon: "🕺" },
-    { text: "😘 Deliver 5 rapid kisses immediately!", icon: "😘" },
-    { text: "👑 Declare your partner the ultimate Gaming Monarch!", icon: "👑" },
-    { text: "🍫 Hand-feed a bite of chocolate brownie brick!", icon: "🍫" }
+    { text: "🥤 Take a big refreshing sip of Bloxy Cola!", icon: "🥤" },
+    { text: "💖 Say 3 genuine things you adore about your partner!", icon: "💖" }
   ];
 
   const card = document.getElementById('roulette-card');
@@ -420,7 +388,7 @@ function initCrashRoulette() {
       audio.playTick();
       counter++;
 
-      if (counter > 15) {
+      if (counter > 12) {
         clearInterval(interval);
         card.classList.remove('spinning');
         spinBtn.disabled = false;
@@ -430,25 +398,29 @@ function initCrashRoulette() {
   });
 }
 
-// --- 5. YOUTUBE LAUGH LOUNGE ---
+// --- 5. YOUTUBE LAUGH LOUNGE (Streamlined to 3 Curated Picks) ---
 function initYouTubeLounge() {
-  const data = {
-    roblox: [
-      { title: "Top 50 Roblox Funniest Moments & Glitches", desc: "Hilarious physics ragdolls, sleigh crashes, and voice chat chaos.", id: "7rAeo-q_2D8", icon: "😂" },
-      { title: "Work At A Pizza Place Total Chaos Gameplay", desc: "Throwing pizzas in the oven, boxing customers, and bakery mayhem.", id: "1yYnQ6fQd-E", icon: "🍕" },
-      { title: "Roblox Story Animations Compilation", desc: "Wholesome & funny blocky cartoons by top community creators.", id: "dQw4w9WgXcQ", icon: "🎬" }
-    ],
-    chaos: [
-      { title: "Couples Try Not To Laugh: Roblox Edition", desc: "Watch together and see who giggles first! Loser owes hugs.", id: "fJ9rUzIMcZQ", icon: "👫" },
-      { title: "Speedrun Parkour Challenge With Blindfold", desc: "Chaotic co-op navigation challenges.", id: "3JZ_D3ELwOQ", icon: "⚡" }
-    ],
-    cozy: [
-      { title: "Cozy Lo-Fi Roblox Cafe Ambiance & Jazz", desc: "Relaxing rain, coffee shop vibes, and gentle background beats.", id: "jfKfPfyJRdk", icon: "☕" },
-      { title: "Building The Ultimate Winter Mountain Lodge", desc: "Satisfying speed-build of a warm fireside cabin.", id: "5qap5aO4i9A", icon: "🏡" }
-    ]
-  };
+  const items = [
+    {
+      title: "Top 50 Roblox Funniest Moments & Sleigh Fails",
+      desc: "Hilarious ragdoll physics, sleigh crashes, and blocky chaos.",
+      id: "7rAeo-q_2D8",
+      icon: "😂"
+    },
+    {
+      title: "Couples Try Not To Laugh: Roblox Edition",
+      desc: "Watch together and see who giggles first! Loser owes hugs.",
+      id: "fJ9rUzIMcZQ",
+      icon: "👫"
+    },
+    {
+      title: "Cozy Lo-Fi Roblox Cafe Ambiance & Jazz",
+      desc: "Warm gentle beats, soft fireplace crackles, and relaxing vibes.",
+      id: "jfKfPfyJRdk",
+      icon: "☕"
+    }
+  ];
 
-  const tabs = document.querySelectorAll('#yt-tabs .cat-btn');
   const grid = document.getElementById('yt-card-grid');
   const modal = document.getElementById('video-modal');
   const iframe = document.getElementById('modal-iframe');
@@ -456,11 +428,8 @@ function initYouTubeLounge() {
   const closeBtn = document.getElementById('close-modal-btn');
   const backdrop = document.getElementById('modal-backdrop');
 
-  function renderCategory(cat) {
-    if (!grid) return;
+  if (grid) {
     grid.innerHTML = '';
-    const items = data[cat] || data.roblox;
-
     items.forEach(item => {
       const card = document.createElement('div');
       card.className = 'yt-card';
@@ -491,19 +460,10 @@ function initYouTubeLounge() {
     iframe.src = '';
   }
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      audio.playClick();
-      renderCategory(tab.dataset.cat);
-    });
-  });
-
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   if (backdrop) backdrop.addEventListener('click', closeModal);
 
-  // Custom URL Launcher
+  // Custom Link Opener
   const customInput = document.getElementById('custom-yt-url');
   const launchBtn = document.getElementById('launch-yt-btn');
   if (launchBtn && customInput) {
@@ -516,22 +476,26 @@ function initYouTubeLounge() {
       } else if (val.includes('youtu.be/')) {
         vidId = val.split('youtu.be/')[1].split('?')[0];
       }
-      openModal('Custom YouTube Stream', vidId);
+      openModal('Custom Stream', vidId);
     });
   }
-
-  renderCategory('roblox');
 }
 
-// --- 6. ANIME HOLODECK ENGINE ---
+// --- 6. ANIME HOLODECK (Streamlined to 2 Options) ---
 function initAnimeHolodeck() {
   const voteBtns = document.querySelectorAll('.vote-btn');
   voteBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      voteBtns.forEach(b => {
+        if (b !== btn) {
+          b.classList.remove('voted');
+          b.textContent = '❤️ Vote For This';
+        }
+      });
       btn.classList.toggle('voted');
       if (btn.classList.contains('voted')) {
         btn.textContent = '💖 VOTED!';
-        audio.playCheez();
+        audio.playVictory();
       } else {
         btn.textContent = '❤️ Vote For This';
         audio.playClick();
@@ -540,12 +504,7 @@ function initAnimeHolodeck() {
     });
   });
 
-  const titles = [
-    "Spy x Family",
-    "Horimiya",
-    "Frieren: Beyond Journey's End",
-    "Delicious in Dungeon"
-  ];
+  const titles = ["Spy x Family", "Horimiya"];
 
   const spinBtn = document.getElementById('random-anime-btn');
   const banner = document.getElementById('anime-selection-banner');
@@ -558,12 +517,12 @@ function initAnimeHolodeck() {
 
       let counter = 0;
       const interval = setInterval(() => {
-        const pick = titles[Math.floor(Math.random() * titles.length)];
+        const pick = titles[counter % titles.length];
         bannerTitle.textContent = pick;
         audio.playTick();
         counter++;
 
-        if (counter > 12) {
+        if (counter > 10) {
           clearInterval(interval);
           spinBtn.disabled = false;
           audio.playVictory();
@@ -573,13 +532,12 @@ function initAnimeHolodeck() {
   }
 }
 
-// --- 7. CINEMA & FOOD ENGINE ---
+// --- 7. CINEMA & FOOD ENGINE (NO SPIDERMAN) ---
 function initCinemaAndFood() {
-  // Movie Preview Details
   const movies = {
-    'spider-verse': {
-      title: "Spider-Man: Across the Spider-Verse",
-      desc: "Mind-bending multiversal animation, electric soundtrack, and unforgettable emotion."
+    'howl': {
+      title: "Howl's Moving Castle",
+      desc: "The ultimate cozy Miyazaki masterpiece with magic, heartwarming romance, and soaring musical scores."
     },
     'suzume': {
       title: "Suzume",
@@ -588,14 +546,6 @@ function initCinemaAndFood() {
     'mario': {
       title: "The Super Mario Bros. Movie",
       desc: "Fast, nostalgic, full of video game easter eggs and pure feel-good energy."
-    },
-    'howl': {
-      title: "Howl's Moving Castle",
-      desc: "The ultimate cozy Miyazaki masterpiece with magic, heartwarming romance, and soaring scores."
-    },
-    'your-name': {
-      title: "Your Name",
-      desc: "A cosmic romance about two souls linked by fate across time and stars."
     }
   };
 
@@ -643,11 +593,11 @@ function initCoupons() {
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const code = btn.dataset.coupon;
-      const textToCopy = `🎟️ [ROBLOX DATE PASS]: ${code} - Officially issued for Maddie & Sahil's Date Night!`;
+      const textToCopy = `🎟️ [ROBLOX DATE PASS]: ${code} - Issued for Maddie & Sahil!`;
       navigator.clipboard.writeText(textToCopy).then(() => {
         const oldText = btn.textContent;
         btn.textContent = '✔ COPIED TO CLIPBOARD!';
-        audio.playFanfare ? audio.playVictory() : audio.playClick();
+        audio.playVictory();
         setTimeout(() => {
           btn.textContent = oldText;
         }, 2200);
@@ -659,14 +609,13 @@ function initCoupons() {
 // --- 9. OVERALL DATE NIGHT PROGRESS TRACKER ---
 function updateProgress() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  const total = checkboxes.length + 2; // + avatar themes + movie
+  const total = checkboxes.length + 1; // checkboxes + anime vote
   let completed = 0;
 
   checkboxes.forEach(cb => {
     if (cb.checked) completed++;
   });
 
-  // Check if anime voted
   if (document.querySelector('.vote-btn.voted')) completed++;
 
   const pct = Math.min(100, Math.round((completed / total) * 100));
@@ -715,20 +664,19 @@ function fireConfetti() {
 // --- 11. INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   initSnowCanvas();
-  const game = new SleighRushGame();
+  new SleighRushGame();
   initCrashRoulette();
   initYouTubeLounge();
   initAnimeHolodeck();
   initCinemaAndFood();
   initCoupons();
 
-  // Soundboard Buttons
+  // Soundboard
   document.querySelectorAll('.sfx-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const type = btn.dataset.sfx;
       if (type === 'oof') audio.playOof();
       if (type === 'slurp') audio.playSlurp();
-      if (type === 'cheez') audio.playCheez();
       if (type === 'fanfare') audio.playVictory();
       if (type === 'toggle-bgm') {
         audio.toggleBGM((isPlaying) => {
@@ -757,9 +705,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (randomThemeBtn) {
     randomThemeBtn.addEventListener('click', () => {
       audio.playClick();
-      const randomIdx = Math.floor(Math.random() * themeBtns.length);
+      const currentActive = Array.from(themeBtns).findIndex(b => b.classList.contains('active'));
+      const nextIdx = (currentActive + 1) % themeBtns.length;
       themeBtns.forEach((b, i) => {
-        b.classList.toggle('active', i === randomIdx);
+        b.classList.toggle('active', i === nextIdx);
       });
     });
   }

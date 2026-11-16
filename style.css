@@ -908,6 +908,13 @@ body {
   margin-bottom: 24px;
 }
 
+.anime-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .anime-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-card);
@@ -1050,6 +1057,13 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
+}
+
+.coupons-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .coupon-card {

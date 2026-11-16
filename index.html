@@ -17,7 +17,7 @@
   <!-- Ambient Light Dimmer for Movie Mode -->
   <div id="cinema-dimmer" class="cinema-dimmer hidden"></div>
 
-  <!-- Audio Soundboard Sticky Top Bar -->
+  <!-- Audio Soundboard Sticky Top Bar (Minimized to essentials) -->
   <header class="top-nav">
     <div class="nav-brand">
       <div class="brand-logo">
@@ -27,7 +27,7 @@
       </div>
       <div class="brand-text">
         <span class="brand-title">EMERGENCY PLAN</span>
-        <span class="brand-badge">ROBLOX EDITION v2.0</span>
+        <span class="brand-badge">ROBLOX EDITION</span>
       </div>
     </div>
 
@@ -38,9 +38,6 @@
       </button>
       <button class="sfx-btn" data-sfx="slurp" title="Bloxy Cola Sip">
         <span class="btn-icon">🥤</span> BLOXY COLA
-      </button>
-      <button class="sfx-btn" data-sfx="cheez" title="Chezburger Nom">
-        <span class="btn-icon">🍔</span> CHEEZBURGER
       </button>
       <button class="sfx-btn" data-sfx="fanfare" title="Victory Fanfare">
         <span class="btn-icon">🏆</span> VICTORY
@@ -68,7 +65,6 @@
     <section class="hero-section">
       <div class="hero-tags">
         <span class="tag tag-red">⚠️ TOP SECRET DIRECTIVE</span>
-        <span class="tag tag-blue">🎮 CO-OP LEVEL: MAXIMUM</span>
         <span class="tag tag-gold">✨ DATE NIGHT PROTOCOL</span>
       </div>
 
@@ -76,7 +72,7 @@
         OPERATION: <span class="highlight-gradient">EMERGENCY PLAN</span>
       </h1>
       <p class="hero-subtitle">
-        The ultimate Roblox-themed date night itinerary: conquer <em>The Last Sleigh</em>, feast on gourmet Bloxy rations, binge laugh-out-loud YouTube clips, anime masterpieces, and cozy cinema.
+        Your streamlined Roblox-themed date night: conquer <em>The Last Sleigh</em>, feast on gourmet Bloxy rations, watch funny YouTube clips, binge cozy anime, and cuddle up for a movie.
       </p>
 
       <!-- Player Cards / Co-Pilots -->
@@ -86,7 +82,7 @@
           <div class="player-info">
             <span class="player-role">MISSION COMMANDER</span>
             <input type="text" class="player-name-input" id="p1-name" value="Maddie" maxlength="20" title="Click to edit name">
-            <span class="player-status">READY FOR ACTION 🟢</span>
+            <span class="player-status">READY 🟢</span>
           </div>
         </div>
 
@@ -98,21 +94,21 @@
         <div class="player-card player-2">
           <div class="player-avatar-badge blue">P2</div>
           <div class="player-info">
-            <span class="player-role">CO-PILOT & HEAVY HITTER</span>
+            <span class="player-role">CO-PILOT</span>
             <input type="text" class="player-name-input" id="p2-name" value="Sahil" maxlength="20" title="Click to edit name">
-            <span class="player-status">LOCKED & LOADED 🟢</span>
+            <span class="player-status">READY 🟢</span>
           </div>
         </div>
       </div>
 
       <!-- Quick Jump Pill Navigation -->
       <div class="quick-nav-pills">
-        <a href="#protocol-1" class="nav-pill"><span>01</span> Avatar Matcher</a>
+        <a href="#protocol-1" class="nav-pill"><span>01</span> Avatars</a>
         <a href="#protocol-2" class="nav-pill"><span>02</span> The Last Sleigh</a>
-        <a href="#protocol-3" class="nav-pill"><span>03</span> YouTube Lounge</a>
-        <a href="#protocol-4" class="nav-pill"><span>04</span> Anime Holodeck</a>
-        <a href="#protocol-5" class="nav-pill"><span>05</span> Cinema & Feast</a>
-        <a href="#protocol-6" class="nav-pill"><span>06</span> Robux Love Vault</a>
+        <a href="#protocol-3" class="nav-pill"><span>03</span> YouTube</a>
+        <a href="#protocol-4" class="nav-pill"><span>04</span> Anime</a>
+        <a href="#protocol-5" class="nav-pill"><span>05</span> Feast & Movie</a>
+        <a href="#protocol-6" class="nav-pill"><span>06</span> Love Vault</a>
       </div>
     </section>
 
@@ -121,53 +117,47 @@
       <div class="protocol-header">
         <div class="protocol-num">PHASE 01</div>
         <h2>Avatar Matchmaker & Wardrobe Sync</h2>
-        <span class="protocol-time">⏱️ 20-30 MINS</span>
+        <span class="protocol-time">⏱️ 20 MINS</span>
       </div>
       <p class="protocol-desc">
-        No team hits Roblox uncoordinated! Hop into your avatars and gear up with matching winter or cozy streetwear drip before launching into the snowstorm.
+        Select a matching look and snap your pre-launch avatar selfie before hitting the slopes.
       </p>
 
       <div class="grid-2-col">
-        <!-- Interactive Theme Picker -->
+        <!-- Minimized Theme Presets -->
         <div class="feature-box">
           <h3>🎨 Matching Theme Presets</h3>
-          <p class="box-hint">Choose your aesthetic for tonight:</p>
+          <p class="box-hint">Pick your aesthetic for tonight:</p>
           <div class="theme-options">
             <button class="theme-btn active" data-theme="winter">
               <span class="theme-emoji">❄️</span>
-              <strong>Winter Sleigh Explorers</strong>
-              <small>Matching snow beanies, puffer jackets & scarf</small>
-            </button>
-            <button class="theme-btn" data-theme="noob">
-              <span class="theme-emoji">🟡</span>
-              <strong>The Classic Noob Duo</strong>
-              <small>Yellow skin, blue torso, green pants drip</small>
+              <div>
+                <strong>Winter Sleigh Explorers</strong>
+                <small>Matching snow beanies, puffer jackets & scarf</small>
+              </div>
             </button>
             <button class="theme-btn" data-theme="pajama">
               <span class="theme-emoji">🧸</span>
-              <strong>Cozy Bedtime Pajama Squad</strong>
-              <small>Onesies, fuzzy slippers & bear beanies</small>
-            </button>
-            <button class="theme-btn" data-theme="cyber">
-              <span class="theme-emoji">⚡</span>
-              <strong>Cyber Streetwear Rebels</strong>
-              <small>Neon hoodies, blocky shades & futuristic glow</small>
+              <div>
+                <strong>Cozy Bedtime Pajama Squad</strong>
+                <small>Matching onesies, fuzzy slippers & bear hats</small>
+              </div>
             </button>
           </div>
           <button class="action-btn" id="random-theme-btn">
-            🎲 Spin For A Random Drip Theme!
+            🎲 Switch Drip Theme
           </button>
         </div>
 
-        <!-- Avatar Prep Checklist -->
+        <!-- Minimized Avatar Prep Checklist -->
         <div class="feature-box">
-          <h3>✅ Pre-Launch Checklist</h3>
+          <h3>✅ Quick Checklist</h3>
           <ul class="interactive-checklist" id="avatar-checklist">
             <li>
               <label class="check-item">
                 <input type="checkbox" data-task="avatar-1">
                 <span class="checkmark"></span>
-                <span>Equip matching head accessories (hat / antlers / beanie)</span>
+                <span>Equip matching head accessories (hat / beanie / onesie)</span>
               </label>
             </li>
             <li>
@@ -180,20 +170,6 @@
             <li>
               <label class="check-item">
                 <input type="checkbox" data-task="avatar-3">
-                <span class="checkmark"></span>
-                <span>Equip favorite shoulder pet or back accessory</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item">
-                <input type="checkbox" data-task="avatar-4">
-                <span class="checkmark"></span>
-                <span>Do a test synchronized emote dance together</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item">
-                <input type="checkbox" data-task="avatar-5">
                 <span class="checkmark"></span>
                 <span>Snap an in-game avatar selfie at the spawn</span>
               </label>
@@ -208,56 +184,55 @@
       <div class="protocol-header">
         <div class="protocol-num red">PHASE 02</div>
         <h2>The Main Quest: "The Last Sleigh"</h2>
-        <span class="protocol-time">⏱️ 45-60 MINS</span>
+        <span class="protocol-time">⏱️ 45 MINS</span>
       </div>
       <p class="protocol-desc">
-        Climb aboard the legendary sleigh! Navigate treacherous winter hazards, jump icy chasms, and survive the downhill ride together.
+        Climb aboard the legendary sleigh! Dodge icy obstacles together, or practice on the mini-simulator below.
       </p>
 
       <div class="grid-2-col">
-        <!-- Interactive Canvas Mini-Game: Sleigh Rush -->
+        <!-- Canvas Mini-Game -->
         <div class="feature-box game-deck">
           <div class="game-header">
             <h3>🛷 Mini Sleigh Simulator</h3>
             <span class="game-tip">Use ← / → or Buttons to Dodge!</span>
           </div>
           <div class="canvas-wrapper">
-            <canvas id="sleigh-canvas" width="400" height="260"></canvas>
+            <canvas id="sleigh-canvas" width="400" height="240"></canvas>
             <div id="game-overlay" class="game-overlay">
               <div id="game-start-screen">
                 <h4>READY TO RUSH?</h4>
-                <p>Dodge rocks and snowmen on the downhill run!</p>
+                <p>Dodge obstacles on the downhill run!</p>
                 <button class="action-btn red" id="start-game-btn">START SLEIGH RUN</button>
               </div>
             </div>
           </div>
           <div class="game-controls">
-            <button class="game-ctrl-btn" id="sleigh-left-btn">⬅️ STEER LEFT</button>
+            <button class="game-ctrl-btn" id="sleigh-left-btn">⬅️ LEFT</button>
             <div class="score-display">SCORE: <span id="sleigh-score">0</span></div>
-            <button class="game-ctrl-btn" id="sleigh-right-btn">STEER RIGHT ➡️</button>
+            <button class="game-ctrl-btn" id="sleigh-right-btn">RIGHT ➡️</button>
           </div>
         </div>
 
-        <!-- The Date Night Crash Roulette Wheel -->
+        <!-- Crash Penalty Roulette Wheel -->
         <div class="feature-box">
-          <h3>🎡 The Sleigh Crash Penalty Wheel</h3>
-          <p class="box-hint">Whoever wipes out or crashes the sleigh must spin the wheel!</p>
+          <h3>🎡 Crash Penalty Wheel</h3>
+          <p class="box-hint">Whoever crashes the sleigh spins for a sweet dare!</p>
           <div class="roulette-container">
             <div class="roulette-wheel-card" id="roulette-card">
               <span class="wheel-icon" id="wheel-icon">🎁</span>
-              <div class="wheel-text" id="wheel-text">Tap below to spin the wheel!</div>
+              <div class="wheel-text" id="wheel-text">Tap below to spin!</div>
             </div>
             <button class="action-btn gold" id="spin-roulette-btn">
-              ⚡ SPIN CRASH PENALTY!
+              ⚡ SPIN PENALTY!
             </button>
           </div>
 
           <div class="co-op-rules-box">
-            <h4>📜 Co-Op Rules of Engagement</h4>
+            <h4>📜 Quick Rules</h4>
             <ul>
               <li><strong>Pilot Swap:</strong> Switch driver seat at every checkpoint.</li>
-              <li><strong>Spotter Duty:</strong> Non-driver must shout out oncoming obstacles.</li>
-              <li><strong>Zero Rage Quits:</strong> Crashes are rewarded with snacks & laughs!</li>
+              <li><strong>Crash Penalty:</strong> Reward every wipeout with snacks and laughs!</li>
             </ul>
           </div>
         </div>
@@ -268,29 +243,23 @@
     <section id="protocol-3" class="protocol-card">
       <div class="protocol-header">
         <div class="protocol-num gold">PHASE 03</div>
-        <h2>YouTube Laugh Lounge & Snack Attack</h2>
-        <span class="protocol-time">⏱️ 30-45 MINS</span>
+        <h2>YouTube Laugh Lounge</h2>
+        <span class="protocol-time">⏱️ 30 MINS</span>
       </div>
       <p class="protocol-desc">
-        Take a breather from the keyboard, grab warm drinks, and lean back for laugh-out-loud YouTube content and Roblox comedy.
+        Kick back, grab warm drinks, and enjoy these handpicked laugh-out-loud YouTube clips.
       </p>
 
       <div class="feature-box">
-        <div class="category-tabs" id="yt-tabs">
-          <button class="cat-btn active" data-cat="roblox">😂 Top Roblox Fails & Animations</button>
-          <button class="cat-btn" data-cat="chaos">👫 Couple Gaming Chaos</button>
-          <button class="cat-btn" data-cat="cozy">☕ Wholesome & Cozy Vibes</button>
-        </div>
-
         <div class="yt-grid" id="yt-card-grid">
-          <!-- Populated dynamically via JS -->
+          <!-- Populated dynamically via JS with 3 top curated picks -->
         </div>
 
         <!-- YouTube Video Launcher Helper -->
         <div class="yt-custom-box">
           <div class="yt-input-row">
-            <input type="text" id="custom-yt-url" placeholder="Or paste any YouTube Video ID / Link here..." class="text-input">
-            <button class="action-btn" id="launch-yt-btn">▶️ Open In Cinema Theater</button>
+            <input type="text" id="custom-yt-url" placeholder="Paste any YouTube Link or Video ID..." class="text-input">
+            <button class="action-btn" id="launch-yt-btn">▶️ Open in Cinema</button>
           </div>
         </div>
       </div>
@@ -301,18 +270,18 @@
       <div class="protocol-header">
         <div class="protocol-num blue">PHASE 04</div>
         <h2>Anime Holodeck Selection</h2>
-        <span class="protocol-time">⏱️ 45-60 MINS</span>
+        <span class="protocol-time">⏱️ 45 MINS</span>
       </div>
       <p class="protocol-desc">
-        Queue up 2 to 3 episodes of top-tier anime. Cast your votes or let the neural decision wheel choose tonight's vibe!
+        Pick your anime vibe for tonight. Vote between two top favorites or let the roulette decide!
       </p>
 
-      <!-- Anime Cards Grid -->
-      <div class="anime-grid">
+      <!-- Minimized 2-Card Anime Grid -->
+      <div class="anime-grid anime-grid-2">
         <div class="anime-card" data-title="Spy x Family">
           <div class="anime-badge">ACTION & COMEDY</div>
           <h3>Spy x Family</h3>
-          <p class="anime-vibe">"Wholesome espionage, telepathic Anya antics, and top-tier family comedy."</p>
+          <p class="anime-vibe">"Wholesome espionage, telepathic Anya antics, and top-tier comedy."</p>
           <div class="card-stats">
             <span>✨ Cozy Factor: 10/10</span>
             <span>😂 Laughs: 10/10</span>
@@ -323,127 +292,82 @@
         <div class="anime-card" data-title="Horimiya">
           <div class="anime-badge pink">PEAK ROM-COM</div>
           <h3>Horimiya</h3>
-          <p class="anime-vibe">"Sweet, heartwarming, ultra-cozy high-school romance with no boring filler."</p>
+          <p class="anime-vibe">"Sweet, heartwarming, ultra-cozy romance with zero boring filler."</p>
           <div class="card-stats">
             <span>💖 Romance: 100%</span>
             <span>🛋️ Cuddle Index: Maximum</span>
           </div>
           <button class="vote-btn" data-vote="Horimiya">❤️ Vote For This</button>
         </div>
-
-        <div class="anime-card" data-title="Frieren">
-          <div class="anime-badge cyan">WINTER MAGIC</div>
-          <h3>Frieren: Beyond Journey's End</h3>
-          <p class="anime-vibe">"Stunning magical landscapes, gorgeous winter atmospheres, and legendary animations."</p>
-          <div class="card-stats">
-            <span>❄️ Atmosphere: 10/10</span>
-            <span>🪄 Magic: Legendary</span>
-          </div>
-          <button class="vote-btn" data-vote="Frieren">❤️ Vote For This</button>
-        </div>
-
-        <div class="anime-card" data-title="Delicious in Dungeon">
-          <div class="anime-badge gold">FOOD & ADVENTURE</div>
-          <h3>Delicious in Dungeon</h3>
-          <p class="anime-vibe">"Hilarious monster-cooking in deep dungeons—guaranteed to make you hungry!"</p>
-          <div class="card-stats">
-            <span>🍲 Food Hunger: 100/10</span>
-            <span>⚔️ Fun: 10/10</span>
-          </div>
-          <button class="vote-btn" data-vote="Delicious in Dungeon">❤️ Vote For This</button>
-        </div>
       </div>
 
       <!-- Anime Decision Maker -->
       <div class="decision-bar">
         <button class="action-btn gold" id="random-anime-btn">
-          🎰 Can't Decide? Spin the Anime Roulette!
+          🎰 Can't Decide? Spin Anime Roulette!
         </button>
         <div id="anime-selection-banner" class="selection-banner hidden">
-          <span>SELECTED UNIVERSE:</span>
+          <span>SELECTED:</span>
           <strong id="selected-anime-name">Spy x Family</strong>
         </div>
       </div>
     </section>
 
-    <!-- PROTOCOL 05: Cinema & Gourmet Blox Feast -->
+    <!-- PROTOCOL 05: Cinema Feast & Movie -->
     <section id="protocol-5" class="protocol-card">
       <div class="protocol-header">
         <div class="protocol-num green">PHASE 05</div>
-        <h2>Cinema Feast & Gourmet Rations</h2>
+        <h2>Cinema Feast & Cozy Movie</h2>
         <span class="protocol-time">⏱️ 1.5 - 2 HOURS</span>
       </div>
       <p class="protocol-desc">
-        The ultimate feast! Enjoy delicious comfort food while kicking back for a cinematic masterpiece.
+        Enjoy delicious comfort food while settling in for tonight's feature film.
       </p>
 
       <div class="grid-2-col">
-        <!-- Interactive Feast Menu -->
+        <!-- Minimized Feast Menu (3 core items) -->
         <div class="feature-box">
-          <h3>🍕 "Work At A Pizza Place" Kitchen Menu</h3>
-          <p class="box-hint">Check off your feast as you prepare or order:</p>
+          <h3>🍕 Blox Kitchen Feast</h3>
+          <p class="box-hint">Check off your feast items:</p>
           <ul class="interactive-checklist" id="food-checklist">
             <li>
               <label class="check-item">
                 <input type="checkbox" data-food="pizza">
                 <span class="checkmark"></span>
-                <span><strong>Gourmet Custom Pizza</strong> (Double cheese, pepperoni & garlic herb crust)</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item">
-                <input type="checkbox" data-food="slider">
-                <span class="checkmark"></span>
-                <span><strong>"Chezburger" Sliders</strong> (Brioche buns, melted cheddar & secret sauce)</span>
+                <span><strong>"Work At A Pizza Place" Custom Flatbread</strong> (Double cheese, pepperoni & herb crust)</span>
               </label>
             </li>
             <li>
               <label class="check-item">
                 <input type="checkbox" data-food="tots">
                 <span class="checkmark"></span>
-                <span><strong>Crispy "Golden Block" Tots / Fries</strong> (With spicy garlic ranch)</span>
+                <span><strong>Crispy "Golden Block" Tots & Fries</strong> (With spicy garlic ranch dip)</span>
               </label>
             </li>
             <li>
               <label class="check-item">
-                <input type="checkbox" data-food="bloxy">
+                <input type="checkbox" data-food="drinks">
                 <span class="checkmark"></span>
-                <span><strong>Chilled "Bloxy Cola"</strong> (Poured over ice with citrus twist)</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item">
-                <input type="checkbox" data-food="cocoa">
-                <span class="checkmark"></span>
-                <span><strong>Sleigh Hot Cocoa</strong> (Whipped cream & block marshmallows)</span>
-              </label>
-            </li>
-            <li>
-              <label class="check-item">
-                <input type="checkbox" data-food="brownies">
-                <span class="checkmark"></span>
-                <span><strong>Chocolate Brick Brownies</strong> / Ice Cream Sundaes</span>
+                <span><strong>Chilled "Bloxy Cola" or Sleigh Hot Cocoa</strong> (With square marshmallows)</span>
               </label>
             </li>
           </ul>
         </div>
 
-        <!-- Movie Selector & Cinema Mode -->
+        <!-- Curated Movie Selector (Spider-Man removed) -->
         <div class="feature-box">
           <h3>🎬 Tonight's Feature Film</h3>
           <div class="movie-selector">
             <select id="movie-dropdown" class="custom-select">
-              <option value="spider-verse">Spider-Man: Across the Spider-Verse (Action/Visual Spectacle)</option>
-              <option value="suzume">Suzume (Emotional Fantasy Romance)</option>
+              <option value="howl" selected>Howl's Moving Castle (Ultimate Cozy Ghibli Romance)</option>
+              <option value="suzume">Suzume (Breathtaking Fantasy Adventure)</option>
               <option value="mario">The Super Mario Bros. Movie (Pure Nostalgia & Fun)</option>
-              <option value="howl">Howl's Moving Castle (Ultimate Cozy Ghibli)</option>
-              <option value="your-name">Your Name (Masterpiece Romance)</option>
             </select>
           </div>
 
           <div class="movie-preview-card" id="movie-preview">
-            <h4 id="preview-title">Spider-Man: Across the Spider-Verse</h4>
-            <p id="preview-desc">Mind-bending multiversal animation, electric soundtrack, and unforgettable emotion.</p>
+            <h4 id="preview-title">Howl's Moving Castle</h4>
+            <p id="preview-desc">The ultimate cozy Miyazaki masterpiece with magic, heartwarming romance, and soaring musical scores.</p>
           </div>
 
           <div class="cinema-actions">
@@ -459,40 +383,27 @@
     <section id="protocol-6" class="protocol-card">
       <div class="protocol-header">
         <div class="protocol-num gold">PHASE 06</div>
-        <h2>The Robux Love Vault & Custom Date Coupons</h2>
+        <h2>The Robux Love Vault</h2>
         <span class="protocol-time">🎁 PERPETUAL VALUE</span>
       </div>
       <p class="protocol-desc">
-        Special non-expiring co-op coupons to redeem anytime during or after the date!
+        Special non-expiring co-op coupons to redeem anytime!
       </p>
 
-      <div class="coupons-grid">
+      <!-- Minimized 2-Pass Grid -->
+      <div class="coupons-grid coupons-grid-2">
         <div class="coupon-card">
           <div class="coupon-tag">R$ 10,000 VALUE</div>
           <h4>HUG DISPENSER PASS</h4>
-          <p>Redeemable for 100 consecutive warm hugs and zero questions asked.</p>
+          <p>Redeemable for unlimited consecutive warm hugs with zero questions asked.</p>
           <button class="copy-coupon-btn" data-coupon="HUG DISPENSER PASS">📋 Copy Pass</button>
         </div>
 
         <div class="coupon-card">
           <div class="coupon-tag gold">R$ 50,000 VALUE</div>
-          <h4>MIDNIGHT SNACK RUN</h4>
-          <p>Co-pilot is legally mandated to fetch any beverage or snack of choice.</p>
-          <button class="copy-coupon-btn" data-coupon="MIDNIGHT SNACK RUN">📋 Copy Pass</button>
-        </div>
-
-        <div class="coupon-card">
-          <div class="coupon-tag cyan">R$ 100,000 VALUE</div>
-          <h4>ROBLOX CARRY PASS</h4>
-          <p>Partner will solo the boss or protect you through any obstacle course.</p>
-          <button class="copy-coupon-btn" data-coupon="ROBLOX CARRY PASS">📋 Copy Pass</button>
-        </div>
-
-        <div class="coupon-card">
-          <div class="coupon-tag red">R$ 1,000,000 VALUE</div>
-          <h4>IMMUNITY PASS</h4>
-          <p>Exempts you from picking the next movie or doing dishes tonight!</p>
-          <button class="copy-coupon-btn" data-coupon="IMMUNITY PASS">📋 Copy Pass</button>
+          <h4>ROBLOX CARRY & MASSAGE PASS</h4>
+          <p>Partner will protect you in-game and provide a relaxing 10-minute shoulder rub.</p>
+          <button class="copy-coupon-btn" data-coupon="ROBLOX CARRY & MASSAGE PASS">📋 Copy Pass</button>
         </div>
       </div>
     </section>

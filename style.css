@@ -1,0 +1,1254 @@
+/* ========================================================
+   OPERATION: EMERGENCY PLAN // ROBLOX DATE NIGHT STYLES
+   ======================================================== */
+
+:root {
+  --bg-primary: #0a0e14;
+  --bg-secondary: #131b26;
+  --bg-card: rgba(22, 31, 46, 0.75);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --roblox-red: #e2231a;
+  --roblox-red-glow: rgba(226, 35, 26, 0.45);
+  --blox-gold: #ffd000;
+  --blox-gold-glow: rgba(255, 208, 0, 0.35);
+  --blox-blue: #0088ff;
+  --blox-cyan: #00f0ff;
+  --blox-green: #00e676;
+  --blox-purple: #9d4edd;
+  --blox-pink: #ff4081;
+  --text-main: #f0f6fc;
+  --text-muted: #8b949e;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Fredoka', cursive, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-block: 0 8px 0 rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Snow Canvas */
+#snow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Cinema Dimmer */
+.cinema-dimmer {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 10, 0.92);
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinema-dimmer.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Sticky Top Navigation Bar */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 20, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 2px solid var(--border-card);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  display: flex;
+  gap: 3px;
+}
+
+.logo-brick {
+  width: 14px;
+  height: 22px;
+  background: var(--roblox-red);
+  border-radius: 3px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.4);
+}
+
+.logo-brick.yellow { background: var(--blox-gold); }
+.logo-brick.blue { background: var(--blox-blue); }
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #fff;
+  display: block;
+}
+
+.brand-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background: var(--roblox-red);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Soundboard Bar */
+.soundboard {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sfx-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+  transition: all 0.15s ease;
+}
+
+.sfx-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(0,0,0,0.4);
+}
+
+.sfx-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+
+.sfx-btn .btn-icon {
+  font-size: 1rem;
+}
+
+/* Nav Progress Bar */
+.nav-progress {
+  min-width: 180px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--roblox-red), var(--blox-gold), var(--blox-green));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main Container */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 30px 10px 50px;
+}
+
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid currentColor;
+}
+
+.tag-red { color: #ff6b6b; background: rgba(226, 35, 26, 0.15); }
+.tag-blue { color: #4dabf7; background: rgba(0, 136, 255, 0.15); }
+.tag-gold { color: #ffd43b; background: rgba(255, 208, 0, 0.15); }
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.highlight-gradient {
+  background: linear-gradient(135deg, #ff4d4d, var(--blox-gold), var(--blox-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px var(--roblox-red-glow);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin: 0 auto 36px;
+}
+
+/* Player Roster Cards */
+.player-roster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.player-card {
+  background: var(--bg-card);
+  border: 2px solid var(--roblox-red);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 8px 24px rgba(226, 35, 26, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.player-card.player-2 {
+  border-color: var(--blox-blue);
+  box-shadow: 0 8px 24px rgba(0, 136, 255, 0.25);
+}
+
+.player-avatar-badge {
+  width: 44px;
+  height: 44px;
+  background: var(--roblox-red);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.4);
+}
+
+.player-avatar-badge.blue {
+  background: var(--blox-blue);
+}
+
+.player-info {
+  text-align: left;
+}
+
+.player-role {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.player-name-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  width: 130px;
+  outline: none;
+  padding: 2px 0;
+  transition: border-color 0.2s;
+}
+
+.player-name-input:focus {
+  border-bottom-color: var(--blox-gold);
+}
+
+.player-status {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--blox-green);
+  margin-top: 2px;
+}
+
+.co-op-heart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+  animation: pulse-heart 1.5s infinite ease-in-out;
+}
+
+.co-op-heart small {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Quick Nav Pills */
+.quick-nav-pills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.nav-pill span {
+  font-family: var(--font-mono);
+  color: var(--blox-gold);
+  font-size: 0.75rem;
+}
+
+.nav-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  border-color: var(--blox-cyan);
+}
+
+/* Protocol Cards */
+.protocol-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 36px;
+  backdrop-filter: blur(12px);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.protocol-card.highlight-border {
+  border-color: rgba(226, 35, 26, 0.5);
+  box-shadow: 0 0 30px rgba(226, 35, 26, 0.15);
+}
+
+.protocol-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.protocol-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: var(--roblox-red);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+}
+
+.protocol-num.red { background: var(--roblox-red); }
+.protocol-num.gold { background: var(--blox-gold); color: #000; }
+.protocol-num.blue { background: var(--blox-blue); }
+.protocol-num.green { background: var(--blox-green); color: #000; }
+
+.protocol-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.protocol-time {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--blox-gold);
+  background: rgba(255, 208, 0, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.protocol-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 24px;
+  max-width: 850px;
+}
+
+/* Grids & Feature Boxes */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.feature-box {
+  background: rgba(10, 14, 20, 0.6);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.feature-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.box-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Theme Picker Buttons */
+.theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.theme-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-btn:hover {
+  border-color: var(--blox-cyan);
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.theme-btn.active {
+  border-color: var(--blox-gold);
+  background: rgba(255, 208, 0, 0.1);
+  box-shadow: 0 0 16px rgba(255, 208, 0, 0.2);
+}
+
+.theme-emoji {
+  font-size: 1.6rem;
+}
+
+.theme-btn strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.theme-btn small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* Interactive Checklists */
+.interactive-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-card);
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.check-item:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.check-item input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.check-item input[type="checkbox"]:checked + .checkmark {
+  background: var(--blox-green);
+  border-color: var(--blox-green);
+}
+
+.check-item input[type="checkbox"]:checked + .checkmark::after {
+  content: "✔";
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.check-item input[type="checkbox"]:checked ~ span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.action-btn {
+  background: var(--roblox-red);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 0 #9e140e;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #9e140e;
+}
+
+.action-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #9e140e;
+}
+
+.action-btn.gold {
+  background: var(--blox-gold);
+  color: #000;
+  box-shadow: 0 4px 0 #b39200;
+}
+
+.action-btn.gold:hover {
+  box-shadow: 0 6px 0 #b39200;
+}
+
+.action-btn.gold:active {
+  box-shadow: 0 1px 0 #b39200;
+}
+
+.action-btn.purple {
+  background: var(--blox-purple);
+  box-shadow: 0 4px 0 #6d29a5;
+}
+
+/* Sleigh Mini Game Box */
+.canvas-wrapper {
+  position: relative;
+  background: #000;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--border-card);
+  margin-bottom: 12px;
+}
+
+#sleigh-canvas {
+  display: block;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(180deg, #091a28 0%, #173652 100%);
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 18, 0.88);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-overlay.hidden {
+  display: none;
+}
+
+.game-overlay h4 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  color: var(--blox-gold);
+}
+
+.game-overlay p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.game-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.game-ctrl-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+}
+
+.score-display {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--blox-green);
+  padding: 0 10px;
+}
+
+/* Crash Roulette Wheel */
+.roulette-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.roulette-wheel-card {
+  background: var(--bg-secondary);
+  border: 2px dashed var(--blox-gold);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+}
+
+.roulette-wheel-card.spinning {
+  animation: jitter 0.1s infinite alternate;
+  border-color: var(--roblox-red);
+}
+
+@keyframes jitter {
+  0% { transform: scale(1) rotate(-1deg); }
+  100% { transform: scale(1.02) rotate(1deg); }
+}
+
+.wheel-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.wheel-text {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.co-op-rules-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  border-left: 3px solid var(--blox-cyan);
+}
+
+.co-op-rules-box h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: var(--blox-cyan);
+}
+
+.co-op-rules-box ul {
+  padding-left: 18px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.co-op-rules-box li {
+  margin-bottom: 4px;
+}
+
+/* YouTube Lounge */
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cat-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cat-btn.active {
+  background: var(--roblox-red);
+  border-color: var(--roblox-red);
+  box-shadow: 0 0 14px var(--roblox-red-glow);
+}
+
+.yt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.yt-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.yt-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--roblox-red);
+  box-shadow: 0 6px 20px rgba(226, 35, 26, 0.2);
+}
+
+.yt-card-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.yt-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.yt-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.yt-play-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: rgba(226, 35, 26, 0.15);
+  color: #ff6b6b;
+  padding: 4px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.yt-custom-box {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-card);
+}
+
+.yt-input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.text-input {
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: var(--blox-gold);
+}
+
+/* Anime Holodeck */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.anime-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.anime-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blox-cyan);
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.2);
+}
+
+.anime-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.anime-badge.pink { background: rgba(255, 64, 129, 0.2); color: var(--blox-pink); }
+.anime-badge.cyan { background: rgba(0, 240, 255, 0.2); color: var(--blox-cyan); }
+.anime-badge.gold { background: rgba(255, 208, 0, 0.2); color: var(--blox-gold); }
+
+.anime-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.anime-vibe {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--blox-cyan);
+  margin-bottom: 16px;
+}
+
+.vote-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vote-btn:hover, .vote-btn.voted {
+  background: var(--blox-pink);
+  border-color: var(--blox-pink);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
+}
+
+.decision-bar {
+  text-align: center;
+}
+
+.selection-banner {
+  margin-top: 16px;
+  background: rgba(255, 208, 0, 0.15);
+  border: 2px dashed var(--blox-gold);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+}
+
+.selection-banner.hidden { display: none; }
+
+.selection-banner strong {
+  font-size: 1.2rem;
+  color: var(--blox-gold);
+}
+
+/* Movie & Feast */
+.custom-select {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
+.movie-preview-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  border-left: 3px solid var(--blox-purple);
+  margin-bottom: 18px;
+}
+
+.movie-preview-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.movie-preview-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Coupons Grid */
+.coupons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.coupon-card {
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.coupon-card:hover {
+  border-color: var(--blox-gold);
+  transform: scale(1.02);
+}
+
+.coupon-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--blox-green);
+  margin-bottom: 8px;
+}
+
+.coupon-tag.gold { color: var(--blox-gold); }
+.coupon-tag.cyan { color: var(--blox-cyan); }
+.coupon-tag.red { color: var(--roblox-red); }
+
+.coupon-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.coupon-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.copy-coupon-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-card);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-coupon-btn:hover {
+  background: var(--blox-gold);
+  color: #000;
+  font-weight: 700;
+}
+
+/* Completion Banner */
+.completion-banner {
+  background: linear-gradient(135deg, rgba(226, 35, 26, 0.2), rgba(255, 208, 0, 0.2), rgba(0, 230, 118, 0.2));
+  border: 2px solid var(--blox-gold);
+  border-radius: var(--radius-lg);
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 208, 0, 0.25);
+}
+
+.trophy-icon {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.completion-banner h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.completion-banner p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.completion-banner .action-btn {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.hidden { display: none; }
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 800px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: rgba(10, 14, 20, 0.9);
+  border-bottom: 1px solid var(--border-card);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover { color: #fff; }
+
+.modal-body {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.modal-body iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+.main-footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid var(--border-card);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-sub {
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .soundboard {
+    justify-content: center;
+  }
+  .protocol-card {
+    padding: 20px;
+  }
+  .player-roster {
+    flex-direction: column;
+  }
+}
